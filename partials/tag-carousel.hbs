@@ -1,0 +1,21 @@
+{{#get "tags" filter="visibility:public" limit="all"}}
+<div class="splide tag-carousel">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {{#foreach tags}}
+      <li class="splide__slide">
+        <a href="{{url}}" class="tag-slide">
+          {{#if feature_image}}
+            <img src="{{feature_image}}" alt="{{name}}">
+          {{/if}}
+          <div class="tag-slide-content">
+            <h2>{{name}}</h2>
+            {{#if description}}<p>{{description}}</p>{{/if}}
+          </div>
+        </a>
+      </li>
+      {{/foreach}}
+    </ul>
+  </div>
+</div>
+{{/get}}
