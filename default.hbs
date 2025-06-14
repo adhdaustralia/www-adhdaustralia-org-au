@@ -122,8 +122,8 @@ $(document).ready(function () {
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const splideEl = document.querySelector('.splide');
-    const tagSlides = document.querySelector('.tag-slides');
     const postSlides = document.querySelector('.post-slides');
+    const tagSlides = document.querySelector('.tag-slides');
 
     if (tagSlides && postSlides) {
       postSlides.querySelectorAll('li').forEach(slide => tagSlides.appendChild(slide));
