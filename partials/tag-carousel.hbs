@@ -31,7 +31,7 @@
                 <footer class="post-card-meta">
                   {{#if count.posts}}
                     <span class="post-card-meta-length">
-                      {{count.posts}} {{#if (eq count.posts 1)}}post{{else}}posts{{/if}}
+                      {{count.posts}} {{#if count.posts.[1]}}posts{{else}}post{{/if}}
                     </span>
                   {{/if}}
                 </footer>
