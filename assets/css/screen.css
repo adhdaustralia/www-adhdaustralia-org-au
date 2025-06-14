@@ -3052,3 +3052,28 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+
+.tag-slide {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+
+.tag-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tag-slide-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag-slide-content p {
+  font-size: 1rem;
+  color: #666;
+}
