@@ -122,8 +122,16 @@ $(document).ready(function () {
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const splideEl = document.querySelector('.splide');
-    if (splideEl) {
-      new Splide('.splide', {
+    const tagSlides = document.querySelector('.tag-slides');
+    const postSlides = document.querySelector('.post-slides');
+
+    if (tagSlides && postSlides) {
+      postSlides.querySelectorAll('li').forEach(slide => tagSlides.appendChild(slide));
+      postSlides.remove(); // clean up
+    }
+
+    if (splideEl && splideEl.querySelectorAll('.splide__slide').length > 0) {
+      new Splide(splideEl, {
         type        : 'loop',
         perPage     : 5,
         perMove     : 1,
@@ -134,17 +142,14 @@ $(document).ready(function () {
         arrows      : false,
         speed       : 900,
         breakpoints : {
-          1024: {
-            perPage: 2
-          },
-          640: {
-            perPage: 1
-          }
+          1024: { perPage: 2 },
+          640 : { perPage: 1 }
         }
       }).mount();
     }
   });
 </script>
+
 
 </body>
 </html>
