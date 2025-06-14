@@ -124,13 +124,23 @@ $(document).ready(function () {
     const splideEl = document.querySelector('.splide');
     if (splideEl) {
       new Splide('.splide', {
-        type       : 'loop',
-        perPage    : 3,
-        autoplay   : true,
-        interval   : 2500,
+        type        : 'loop',
+        perPage     : 5,
+        perMove     : 1,
+        autoplay    : true,
+        interval    : 3500,
         pauseOnHover: false,
-        pagination : false,
-        arrows     : false
+        pagination  : false,
+        arrows      : false,
+        speed       : 900,
+        breakpoints : {
+          1024: {
+            perPage: 2
+          },
+          640: {
+            perPage: 1
+          }
+        }
       }).mount();
     }
   });
