@@ -2,26 +2,6 @@
   <div class="splide__track">
     <ul class="splide__list">
 
-      {{#get "tags" limit="all"}}
-        {{#foreach tags}}
-          {{#if feature_image}}
-          <li class="splide__slide">
-            <a href="{{url}}">
-              <article class="post-card tag-card has-image">
-                <span class="post-card-image-link">
-                  <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{name}}" loading="lazy" />
-                </span>
-                <div class="post-card-content">
-                  <h2 class="post-card-title">{{name}}</h2>
-                  {{#if description}}<div class="post-card-excerpt">{{description}}</div>{{/if}}
-                </div>
-              </article>
-            </a>
-          </li>
-          {{/if}}
-        {{/foreach}}
-      {{/get}}
-
       {{#get "posts" filter="featured:true" include="tags" limit="all"}}
         {{#foreach posts}}
           <li class="splide__slide">
@@ -39,6 +19,26 @@
               </article>
             </a>
           </li>
+        {{/foreach}}
+      {{/get}}
+
+      {{#get "tags" limit="all"}}
+        {{#foreach tags}}
+          {{#if feature_image}}
+          <li class="splide__slide">
+            <a href="{{url}}">
+              <article class="post-card tag-card has-image">
+                <span class="post-card-image-link">
+                  <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{name}}" loading="lazy" />
+                </span>
+                <div class="post-card-content">
+                  <h2 class="post-card-title">{{name}}</h2>
+                  {{#if description}}<div class="post-card-excerpt">{{description}}</div>{{/if}}
+                </div>
+              </article>
+            </a>
+          </li>
+          {{/if}}
         {{/foreach}}
       {{/get}}
 
