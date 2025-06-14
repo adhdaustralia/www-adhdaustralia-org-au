@@ -3,17 +3,44 @@
   <div class="splide__track">
     <ul class="splide__list">
       {{#foreach tags}}
-      <li class="splide__slide">
-        <a href="{{url}}" class="tag-slide">
-          {{#if feature_image}}
-            <img src="{{feature_image}}" alt="{{name}}">
-          {{/if}}
-          <div class="tag-slide-content">
-            <h2>{{name}}</h2>
-            {{#if description}}<p>{{description}}</p>{{/if}}
-          </div>
-        </a>
-      </li>
+        {{#if feature_image}}
+        <li class="splide__slide">
+          <a href="{{url}}" class="tag-slide-link">
+            <article class="post-card tag-card has-image">
+              
+              <span class="post-card-image-link">
+                <img class="post-card-image"
+                  srcset="{{img_url feature_image size="s"}} 300w,
+                          {{img_url feature_image size="m"}} 600w,
+                          {{img_url feature_image size="l"}} 1000w,
+                          {{img_url feature_image size="xl"}} 2000w"
+                  sizes="(max-width: 1000px) 400px, 800px"
+                  src="{{img_url feature_image size="m"}}"
+                  alt="{{name}}"
+                  loading="lazy"
+                />
+              </span>
+
+              <div class="post-card-content">
+                <header class="post-card-header">
+                  <h2 class="post-card-title">{{name}}</h2>
+                </header>
+                {{#if description}}
+                  <div class="post-card-excerpt">{{description}}</div>
+                {{/if}}
+                <footer class="post-card-meta">
+                  {{#if count.posts}}
+                    <span class="post-card-meta-length">
+                      {{count.posts}} {{#if (eq count.posts 1)}}post{{else}}posts{{/if}}
+                    </span>
+                  {{/if}}
+                </footer>
+              </div>
+
+            </article>
+          </a>
+        </li>
+        {{/if}}
       {{/foreach}}
     </ul>
   </div>
