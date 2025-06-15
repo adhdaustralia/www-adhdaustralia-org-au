@@ -1,47 +1,66 @@
 <div class="splide tag-carousel">
   <div class="splide__track">
-    <ul class="splide__list">
 
+    <ul class="splide__list post-slides">
       {{#get "posts" filter="featured:true" include="tags" limit="all"}}
         {{#foreach posts}}
           <li class="splide__slide">
             <a href="{{url}}">
               <article class="post-card has-image">
                 {{#if feature_image}}
-                <span class="post-card-image-link">
-                  <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy" />
-                </span>
+                  <span class="post-card-image-link">
+                    <img
+                      class="post-card-image"
+                      src="{{img_url feature_image size="m"}}"
+                      alt="{{title}}"
+                      loading="lazy"
+                    />
+                  </span>
                 {{/if}}
                 <div class="post-card-content">
                   <h2 class="post-card-title">{{title}}</h2>
-                  {{#if custom_excerpt}}<div class="post-card-excerpt">{{custom_excerpt}}</div>{{/if}}
+                  {{#if custom_excerpt}}
+                    <div class="post-card-excerpt">{{custom_excerpt}}</div>
+                  {{/if}}
                 </div>
               </article>
             </a>
           </li>
         {{/foreach}}
       {{/get}}
+    </ul>
 
+    <ul class="splide__list tag-slides">
       {{#get "tags" limit="all"}}
         {{#foreach tags}}
           {{#if feature_image}}
-          <li class="splide__slide">
-            <a href="{{url}}">
-              <article class="post-card tag-card has-image">
-                <span class="post-card-image-link">
-                  <img class="post-card-image" src="{{img_url feature_image size="m"}}" alt="{{name}}" loading="lazy" />
-                </span>
-                <div class="post-card-content">
-                  <h2 class="post-card-title">{{name}}</h2>
-                  {{#if description}}<div class="post-card-excerpt">{{description}}</div>{{/if}}
-                </div>
-              </article>
-            </a>
-          </li>
+            <li
+              class="splide__slide tag-slide"
+              data-slug="{{slug}}"
+            >
+              <a href="{{url}}">
+                <article class="post-card tag-card has-image">
+                  <span class="post-card-image-link">
+                    <img
+                      class="post-card-image"
+                      src="{{img_url feature_image size="m"}}"
+                      alt="{{name}}"
+                      loading="lazy"
+                    />
+                  </span>
+                  <div class="post-card-content">
+                    <h2 class="post-card-title">{{name}}</h2>
+                    {{#if description}}
+                      <div class="post-card-excerpt">{{description}}</div>
+                    {{/if}}
+                  </div>
+                </article>
+              </a>
+            </li>
           {{/if}}
         {{/foreach}}
       {{/get}}
-
     </ul>
+
   </div>
 </div>
