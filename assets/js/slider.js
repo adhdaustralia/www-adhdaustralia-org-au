@@ -21,7 +21,7 @@ function initCarousel() {
       speed       : 900,
       padding     : 0,
       gap         : 0,
-      easing      : 'cubic-bezier(0.4, 0, 0.2, 1)',
+      easing      : 'ease-in-out',
       breakpoints : { 1024: { perPage: 2 }, 640: { perPage: 1 } }
     }).mount();
   }
