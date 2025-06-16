@@ -4,7 +4,7 @@
     <ul class="splide__list post-slides">
       {{#get "posts" filter="featured:true" include="tags" limit="all"}}
         {{#foreach posts}}
-          <li class="splide__slide">
+          <li class="splide__slide tag-slide">
             <a href="{{url}}">
               <article class="post-card has-image">
                 {{#if feature_image}}
