@@ -68,7 +68,7 @@ into the {body} of the default.hbs template --}}
 
   {{#get "posts"
       filter="tag:hash-home+tag:-hash-highlight"
-      order="published_at desc"
+      order="primary_tag asc, published_at desc"
       limit="all"
       include="tags"
       as |otherPosts|}}
