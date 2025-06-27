@@ -53,12 +53,31 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
 
-    <div class="post-feed">
-        {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
-        {{/foreach}}
-    </div>
+<div class="post-feed">
+
+  {{#get "posts"
+      filter="tag:hash-home+tag:hash-highlight"
+      order="published_at desc"
+      limit="all"
+      include="tags"
+      as |highlightPosts|}}
+    {{#foreach highlightPosts}}
+      {{> "post-card"}}
+    {{/foreach}}
+  {{/get}}
+
+  {{#get "posts"
+      filter="tag:hash-home+tag:-hash-highlight"
+      order="published_at desc"
+      limit="all"
+      include="tags"
+      as |otherPosts|}}
+    {{#foreach otherPosts}}
+      {{> "post-card"}}
+    {{/foreach}}
+  {{/get}}
+
+</div>
 
     {{pagination}}
 
