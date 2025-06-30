@@ -3083,6 +3083,13 @@ the right place. Onward!
   margin-top:0.5rem;
 }
 
+@media (max-width: 640px) {
+  .tag-carousel {
+    background-color:#f7f7f7;
+    padding-bottom: 0.6rem;
+  }
+}
+
 /* Container: three columns, equal width */
 .footer-sections {
   display: flex;
