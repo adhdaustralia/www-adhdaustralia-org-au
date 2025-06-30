@@ -9,12 +9,18 @@
               <article class="post-card has-image">
                 {{#if feature_image}}
                   <span class="post-card-image-link">
-                    <img
-                      class="post-card-image"
-                      src="{{img_url feature_image size="m"}}"
-                      alt="{{title}}"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="{{img_url feature_image size='m' format='webp'}}"
+                      >
+                      <img
+                        class="post-card-image"
+                        src="{{img_url feature_image size='m'}}"
+                        alt="{{title}}"
+                        loading="lazy"
+                      />
+                    </picture>
                   </span>
                 {{/if}}
                 <div class="post-card-content">
@@ -41,12 +47,18 @@
               <a href="{{url}}">
                 <article class="post-card tag-card has-image">
                   <span class="post-card-image-link">
-                    <img
-                      class="post-card-image"
-                      src="{{img_url feature_image size="m"}}"
-                      alt="{{name}}"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcset="{{img_url feature_image size='m' format='webp'}}"
+                      >
+                      <img
+                        class="post-card-image"
+                        src="{{img_url feature_image size='m'}}"
+                        alt="{{name}}"
+                        loading="lazy"
+                      />
+                    </picture>
                   </span>
                   <div class="post-card-content">
                     <h2 class="post-card-title">{{name}}</h2>

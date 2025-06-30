@@ -2122,7 +2122,7 @@ iframe.instagram-media + script + :not([id]) {
     margin-left: 10px;
 }
 
-.site-footer-nav li:not(:first-child) a:before {
+.site-footer-nav li a:before {
     content: "";
     display: block;
     width: 2px;
@@ -3081,3 +3081,67 @@ the right place. Onward!
 .tag-carousel {
   margin-top:0.5rem;
 }
+
+/* Container: three columns, equal width */
+.footer-sections {
+  display: flex;
+  gap: 2rem;
+  margin: 0 0 2rem;
+}
+
+/* Each section stacks its heading + list vertically */
+.footer-section {
+  flex: 1;
+}
+
+.footer-sections .footer-section {
+  flex: 1;           /* each takes up 1 “share” of available space */
+  min-width: 0;      /* prevents overflow on long words */
+  padding: 0 1rem;   /* optional breathing room */
+}
+
+/* Section titles */
+.footer-section h4 {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* Remove default list styles */
+.footer-section ul,
+.footer-section .footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+}
+
+/* Vertical spacing between items */
+.footer-section li + li {
+  margin-top: 0.5rem;
+}
+
+/* Links styling */
+.footer-section a {
+  color: var(--color-midgrey);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover,
+.footer-section a:focus {
+  color: var(--color-lightgrey);
+}
+
+
+/* On small screens, stack the sections */
+@media (max-width: 700px) {
+  .footer-sections {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
