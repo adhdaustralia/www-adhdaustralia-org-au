@@ -21,6 +21,16 @@ function initCarousel() {
       .forEach(slide => tagSlides.appendChild(slide));
   }
 
+  if (tagSlides) {
+    tagSlides.querySelectorAll('.post-card-excerpt').forEach(el => {
+      const txt = el.textContent.trim();
+      const idx = txt.indexOf('.');
+      if (idx > 0) {
+        el.textContent = txt.slice(0, idx + 1);
+      }
+    });
+  }
+
   if (splideEl?.querySelectorAll('.splide__slide').length) {
     new Splide(splideEl, {
       type        : 'loop',
@@ -40,6 +50,7 @@ function initCarousel() {
   }
 }
 
+// Defer initCarousel until DOM is ready
 (function deferCarouselInit(fn) {
   if (document.readyState !== 'loading') {
     fn();
