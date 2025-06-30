@@ -458,6 +458,7 @@ production stylesheet in assets/built/screen.css
 .gh-head-menu .nav li {
     margin: 0;
     padding: 0;
+    text-transform: uppercase;
 }
 
 .gh-head-menu .nav a {

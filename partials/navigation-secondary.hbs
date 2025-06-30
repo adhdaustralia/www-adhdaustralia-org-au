@@ -1,5 +1,24 @@
 <div class="footer-sections">
   <div class="footer-section">
+    <h4>Quick Links</h4>
+    <nav class="footer-nav">
+      <ul class="footer-nav-list">
+        {{#navigation type="primary"}}
+          <li class="footer-nav-item">
+            <a 
+              href="{{url}}" 
+              class="footer-nav-link" 
+              {{#if target}}target="{{target}}" rel="noopener"{{/if}}
+            >
+              {{label}}
+            </a>
+          </li>
+        {{/navigation}}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-section">
     <h4>Get Involved</h4>
     <nav class="footer-nav">
       {{navigation type="secondary"}}
