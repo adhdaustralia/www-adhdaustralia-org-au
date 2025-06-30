@@ -9,7 +9,7 @@
   <div class="footer-section">
     <h4>Resources</h4>
     <ul class="footer-menu">
-      {{#get "tags" filter="slug:-education+slug:-employment+slug:-health+slug:-justice+slug:-parents-carers+slug:-personal" limit="all"}}
+      {{#get "tags" filter="slug:-adhders+slug:-education+slug:-employment+slug:-family+slug:-health+slug:-justice" limit="all"}}
         {{#foreach tags}}
           <li><a href="{{url}}">{{name}}</a></li>
         {{/foreach}}
@@ -20,7 +20,7 @@
   <div class="footer-section">
     <h4>For You</h4>
     <ul class="footer-menu">
-      {{#get "tags" filter="slug:[education,employment,health,justice,parents-carers,personal]" limit="all"}}
+      {{#get "tags" filter="slug:[adhders,education,employment,family,health,justice]" limit="all"}}
         {{#foreach tags}}
           <li><a href="{{url}}">{{name}}</a></li>
         {{/foreach}}
