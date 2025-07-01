@@ -3153,3 +3153,6 @@ the right place. Onward!
   }
 }
 
+.tag-page-content {
+    grid-column: 1 / span 6;
+}

@@ -52,6 +52,19 @@
         </section>
         {{/tag}}
 
+        {{#tag}}
+            {{#get "pages" filter="slug:{{slug}}" limit="1"}}
+                {{#foreach pages}}
+                    <section class="tag-page-content">
+                        <div class="tag-page-body">
+                            {{content}}
+                        </div>
+                    </section>
+                {{/foreach}}
+            {{/get}}
+        {{/tag}}
+
+
         {{#foreach posts}}
             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
             {{> "post-card"}}
