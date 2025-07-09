@@ -53,6 +53,17 @@ into the {body} tag of the default.hbs template --}}
                     {{#if reading_time}}
                         <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                     {{/if}}
+                    {{#if tags visibility="public"}}
+                        {{#if tags.[1] visibility="public"}}
+                            <span class="related"></span>
+                            Related topics:
+                            {{#foreach tags visibility="public" from="2"}}
+                                {{#unless @first}}<span class="bull">&bull;</span>{{/unless}}
+                                <a href="{{url}}" class="tag-link">{{name}}</a>
+                            {{/foreach}}
+                            </span>
+                        {{/if}}
+                    {{/if}}
                 </div>
             </div>
 
