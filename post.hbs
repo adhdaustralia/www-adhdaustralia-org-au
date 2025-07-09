@@ -40,10 +40,12 @@ into the {body} tag of the default.hbs template --}}
                         <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                     {{/if}}
                     {{#if tags visibility="public"}}
-                        {{#if tags.[1] visibility="public"}}
+                        {{#if tags.[2] visibility="public"}}
                             <span class="related"></span>
-                            Related topics:
                             {{#foreach tags visibility="public" from="2"}}
+                                {{#if @first}}
+                                    Related topics:
+                                {{/if}}
                                 {{#unless @first}}<span class="bull">&bull;</span>{{/unless}}
                                 <a href="{{url}}" class="tag-link">{{name}}</a>
                             {{/foreach}}
