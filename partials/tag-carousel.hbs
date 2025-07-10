@@ -37,7 +37,7 @@
     </ul>
 
     <ul class="splide__list tag-slides">
-      {{#get "tags" limit="all"}}
+      {{#get "tags" limit="all" filter='slug:[adhders,education,employment,family,health,justice]'}}
         {{#foreach tags}}
           {{#if feature_image}}
             <li
